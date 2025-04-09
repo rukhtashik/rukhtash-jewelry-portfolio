@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rukhtash Jewelry - Главная</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">О бренде</a></li>
+                <li><a href="collections.html">Коллекции</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Добро пожаловать в Rukhtash Jewelry</h1>
+        <p>Изысканные украшения, вдохновленные минимализмом и элегантностью.</p>
+    </section>
+
+    <section class="collections-preview">
+        <h2>Наши коллекции</h2>
+        <div class="gallery">
+            <img src="image1.jpg" alt="Коллекция 1">
+            <img src="image2.jpg" alt="Коллекция 2">
+            <img src="image3.jpg" alt="Коллекция 3">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Rukhtash Jewelry</p>
+    </footer>
+    <script>
+        // Ждем загрузки контента страницы
+        window.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll("section");
+    
+            // Функция для проверки видимости секции
+            function checkVisibility() {
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                        section.classList.add("visible");
+                    }
+                });
+            }
+    
+            // Следим за прокруткой страницы
+            window.addEventListener("scroll", checkVisibility);
+    
+            // Инициализируем видимость сразу после загрузки
+            checkVisibility();
+        });
+    </script>
+    
+</body>
+</html>

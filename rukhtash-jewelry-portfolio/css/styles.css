@@ -1,0 +1,166 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Стили для секции hero */
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-color: #f4f4f4;
+}
+
+/* Галерея коллекций */
+.collections-preview .gallery {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.collections-preview .gallery img {
+    width: 30%;
+    height: auto;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .collections-preview .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+    .collections-preview .gallery img {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Уменьшаем шрифт для удобства чтения на маленьких экранах */
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        padding: 30px 10px;
+        background-color: #f4f4f4;
+    }
+
+    .hero h1 {
+        font-size: 1.8em; /* Уменьшаем размер текста на мобильных */
+    }
+
+    .collections-preview .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .collections-preview .gallery img {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .contact form input, .contact form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .contact form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+}
+/* Адаптивность для планшетов */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hero {
+        padding: 40px 10px;
+    }
+
+    .collections-preview .gallery {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .collections-preview .gallery img {
+        width: 45%;
+    }
+
+    .contact form input, .contact form textarea {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .contact form button {
+        padding: 12px;
+    }
+}
+/* Плавные переходы на изображениях */
+img {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.05); /* Увеличение изображения при наведении */
+    opacity: 0.8; /* Немного прозрачности для эффекта */
+}
+
+/* Плавное появление контента */
+section {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+section.visible {
+    opacity: 1;
+}
